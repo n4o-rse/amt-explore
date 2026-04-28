@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "amt"
+version = "0.1.0"
+description = "Academic Meta Tool – Python port of the JS version"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [
+    { name = "LEIZA SCIT" },
+]
+keywords = ["ontology", "rdf", "knowledge-graph", "fuzzy-logic", "amt"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+]
+
+dependencies = [
+    "rdflib>=7.0",
+    "pyvis>=0.3.2",
+]
+
+[project.optional-dependencies]
+notebook = ["ipywidgets>=8", "ipython>=8", "pandas>=2"]
+dev = ["pytest>=8", "pytest-cov>=5"]
+
+[project.scripts]
+amt = "amt.cli:main"
+
+[project.urls]
+Homepage  = "http://academic-meta-tool.xyz/"
+Webviewer = "https://leiza-scit.github.io/CAA2026-amt/"
+Source    = "https://github.com/leiza-scit/CAA2026-amt"
+
+[tool.setuptools.packages.find]
+include = ["amt*"]
+exclude = ["tests*", "notebooks*", "examples*"]
